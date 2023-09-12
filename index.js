@@ -25,7 +25,7 @@ app.get("/fruits", (req, res) => {
 const getFruitIndex = fruitName => {
     //Take in a lowercase fruitname and returns the index of the fruit or -1
 
-    return fruits.findIndex((fruit) => fruit.name => fruit.name.toLowerCase() == fruitName)
+    return fruits.findIndex((fruit) => fruit.name.toLowerCase() == fruitName)
 }
 
 
