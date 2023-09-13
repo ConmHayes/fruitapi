@@ -35,7 +35,7 @@ app.post("/fruits", (req, res) => {
     if (fi > -1) {
         res.status(409).send("The fruit already exist")
     } else {
-        //create and array of al ids 
+        //create and array of all ids 
         const ids = fruits.map((fruit) => fruit.ids)
         //get max id
         let maxId = Math.max(...ids)
