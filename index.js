@@ -1,5 +1,6 @@
 //Fruit Api using express
 require('dotenv').config()
+const cors = require('cors')
 const fruits = require("./fruits.json")
 const express = require("express")
 const app = express()
@@ -10,7 +11,7 @@ const port = process.env.PORT
 //     console.log("I'm a piece of middlewear")
 //     next()
 // })
-
+app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
