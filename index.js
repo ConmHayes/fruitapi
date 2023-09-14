@@ -37,22 +37,18 @@ app.post("/fruits", (req, res) => {
         res.status(409).send("The fruit already exist")
     } else {
         //create and array of all ids 
-        const ids = fruits.map((fruit) => fruit.ids)
+        const ids = fruits.map((fruit) => fruit.id)
         //get max id
         let maxId = Math.max(...ids)
         //incremment that by one
-        maxid++
+        maxId++
         //Adjust id to new max id
         req.body.id = maxId
 
-        fruit.push(req.body)
+        fruits.push(req.body)
         res.status(201).send(req.body)
     }
 
-
-    const fruits = req.body
-    console.log(fruit) // Good for debugging
-    res.send("New Fruit Created")
 })
 
 app.delete("/fruit/:name", (req, res) => {
